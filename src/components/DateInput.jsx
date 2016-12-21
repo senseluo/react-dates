@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import cx from 'classnames';
 
+import toISODateString from '../utils/toISODateString';
 import isTouchDevice from '../utils/isTouchDevice';
 
 const propTypes = {
@@ -96,7 +97,8 @@ export default class DateInput extends React.Component {
       required,
     } = this.props;
 
-    const value = dateValue || dateString;
+    const value = dateValue ? toISODateString(dateValue) : dateString;
+    const displayText = dateValue || dateString || placeholder;
 
     return (
       <div
@@ -134,7 +136,7 @@ export default class DateInput extends React.Component {
             'DateInput__display-text--disabled': disabled,
           })}
         >
-          {value || placeholder}
+          {displayText}
         </div>
       </div>
     );
