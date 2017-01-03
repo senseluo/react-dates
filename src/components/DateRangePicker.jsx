@@ -183,6 +183,8 @@ export default class DateRangePicker extends React.Component {
       endDate,
       minimumNights,
       keepOpenOnDateSelect,
+      monthInfo,
+      monthInfoDateFormat,
     } = this.props;
     const { dayPickerContainerStyles } = this.state;
 
@@ -222,6 +224,8 @@ export default class DateRangePicker extends React.Component {
           isDayHighlighted={isDayHighlighted}
           isDayBlocked={isDayBlocked}
           keepOpenOnDateSelect={keepOpenOnDateSelect}
+          monthInfo={monthInfo}
+          monthInfoDateFormat={monthInfoDateFormat}
         />
 
         {withFullScreenPortal &&

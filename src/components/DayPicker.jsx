@@ -46,6 +46,9 @@ const propTypes = {
 
   // i18n
   monthFormat: PropTypes.string,
+
+  monthInfo: PropTypes.object,
+  monthInfoDateFormat: PropTypes.string,
 };
 
 const defaultProps = {
@@ -363,6 +366,8 @@ export default class DayPicker extends React.Component {
       onDayMouseLeave,
       onOutsideClick,
       monthFormat,
+      monthInfo,
+      monthInfoDateFormat,
     } = this.props;
 
     const numOfWeekHeaders = this.isVertical() ? 1 : numberOfMonths;
@@ -447,6 +452,8 @@ export default class DayPicker extends React.Component {
               onDayMouseLeave={onDayMouseLeave}
               onMonthTransitionEnd={this.updateStateAfterMonthTransition}
               monthFormat={monthFormat}
+              monthInfo={monthInfo}
+              monthInfoDateFormat={monthInfoDateFormat}
             />
           </div>
         </OutsideClickHandler>
